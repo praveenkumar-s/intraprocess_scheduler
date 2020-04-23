@@ -1,0 +1,223 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "scheduler_enabled",
+        "schedules"
+    ],
+    "properties": {
+        "scheduler_enabled": {
+            "$id": "#/properties/scheduler_enabled",
+            "type": "boolean",
+            "title": "The Scheduler_enabled Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "schedules": {
+            "$id": "#/properties/schedules",
+            "type": "array",
+            "title": "The Schedules Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "params": [
+                            "CODEDUIVM138"
+                        ],
+                        "schedule": {
+                            "hour": "20",
+                            "second": "1",
+                            "day_of_week": "mon,tue,wed,thu,fri",
+                            "minute": "26"
+                        },
+                        "action": "schedulable_jobs:online"
+                    },
+                    {
+                        "params": [
+                            "CODEDUIVM139"
+                        ],
+                        "schedule": {
+                            "day_of_week": "mon,tue,wed,thu,fri",
+                            "minute": "53",
+                            "hour": "19",
+                            "second": "1"
+                        },
+                        "action": "schedulable_jobs:online"
+                    },
+                    {
+                        "action": "schedulable_jobs:online",
+                        "params": [
+                            "CODEDUIVM120"
+                        ],
+                        "schedule": {
+                            "second": "1",
+                            "day_of_week": "mon,tue,wed,thu,fri",
+                            "minute": "27",
+                            "hour": "20"
+                        }
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/schedules/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "action": "schedulable_jobs:online",
+                        "params": [
+                            "CODEDUIVM138"
+                        ],
+                        "schedule": {
+                            "minute": "26",
+                            "hour": "20",
+                            "second": "1",
+                            "day_of_week": "mon,tue,wed,thu,fri"
+                        }
+                    },
+                    {
+                        "action": "schedulable_jobs:online",
+                        "params": [
+                            "CODEDUIVM139"
+                        ],
+                        "schedule": {
+                            "hour": "19",
+                            "second": "1",
+                            "day_of_week": "mon,tue,wed,thu,fri",
+                            "minute": "53"
+                        }
+                    },
+                    {
+                        "schedule": {
+                            "minute": "27",
+                            "hour": "20",
+                            "second": "1",
+                            "day_of_week": "mon,tue,wed,thu,fri"
+                        },
+                        "action": "schedulable_jobs:online",
+                        "params": [
+                            "CODEDUIVM120"
+                        ]
+                    }
+                ],
+                "additionalProperties": true,
+                "required": [
+                    "schedule",
+                    "action",
+                    "params"
+                ],
+                "properties": {
+                    "schedule": {
+                        "$id": "#/properties/schedules/items/properties/schedule",
+                        "type": "object",
+                        "title": "The Schedule Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "hour": "20",
+                                "second": "1",
+                                "day_of_week": "mon,tue,wed,thu,fri",
+                                "minute": "26"
+                            }
+                        ],
+                        "additionalProperties": true,
+                        "required": [
+                            "day_of_week",
+                            "hour",
+                            "minute",
+                            "second"
+                        ],
+                        "properties": {
+                            "day_of_week": {
+                                "$id": "#/properties/schedules/items/properties/schedule/properties/day_of_week",
+                                "type": "string",
+                                "title": "The Day_of_week Schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "mon,tue,wed,thu,fri"
+                                ]
+                            },
+                            "hour": {
+                                "$id": "#/properties/schedules/items/properties/schedule/properties/hour",
+                                "type": "string",
+                                "title": "The Hour Schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "20"
+                                ]
+                            },
+                            "minute": {
+                                "$id": "#/properties/schedules/items/properties/schedule/properties/minute",
+                                "type": "string",
+                                "title": "The Minute Schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "26"
+                                ]
+                            },
+                            "second": {
+                                "$id": "#/properties/schedules/items/properties/schedule/properties/second",
+                                "type": "string",
+                                "title": "The Second Schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "1"
+                                ]
+                            }
+                        }
+                    },
+                    "action": {
+                        "$id": "#/properties/schedules/items/properties/action",
+                        "type": "string",
+                        "title": "The Action Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "schedulable_jobs:online"
+                        ]
+                    },
+                    "params": {
+                        "$id": "#/properties/schedules/items/properties/params",
+                        "type": "array",
+                        "title": "The Params Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "CODEDUIVM138"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/properties/schedules/items/properties/params/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "CODEDUIVM138"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
