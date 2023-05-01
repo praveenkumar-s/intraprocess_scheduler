@@ -1,4 +1,4 @@
 jsonschema==3.0.2
-Flask==1.0.2
+Flask==2.3.2
 APScheduler==3.6.3
 requests==2.20.0
